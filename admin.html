@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>داشبورد مدیریت | ENERGY</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#050a10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2335d8ff'/%3E%3Ctext x='32' y='46' font-size='38' font-weight='900' text-anchor='middle' fill='%23031018' font-family='Arial,sans-serif'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+<header class="site-header admin-topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">E</span>ENERGY <small>ADMIN</small></a>
+  <nav class="main-nav" aria-label="منوی مدیریت"><a href="index.html">مشاهده فروشگاه</a></nav>
+  <div class="header-actions">
+    <a class="home-shortcut" href="index.html" aria-label="صفحه اصلی" title="صفحه اصلی"><svg class="home-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></svg></a><button class="login-link logout-link" id="admin-logout" type="button">خروج</button>
+    <button class="menu-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+  <main class="container admin-page">
+    <div class="admin-layout">
+      <aside class="admin-sidebar glass-panel" aria-label="منوی مدیریت">
+        <div class="admin-profile"><span class="admin-avatar">E</span><div><b>ENERGY</b><small>مدیریت فروشگاه</small></div></div>
+        <a class="active" href="#overview">◈ نمای کلی</a>
+        <a href="#product-editor">▣ افزودن محصول</a>
+        <a href="#categories">▤ دسته‌بندی‌ها</a>
+        <a href="#site-content">▦ محتوای صفحه</a>
+        <a href="#products-list">▧ محصولات</a>
+        <a href="#orders-list">▥ رسیدها و سفارش‌ها</a>
+        <a href="#about-admin">⌂ آدرس و درباره ما</a>
+        <a href="#contact-admin">☎ ارتباط با ما</a>
+        <a href="#messages-list">✉ پیام‌ها</a>
+        <a href="#password-admin">🔒 رمز مدیر</a>
+        <a href="index.html">↗ مشاهده فروشگاه</a>
+      </aside>
+      <div class="admin-main">
+        <div class="dashboard-heading" id="overview">
+          <div><p class="eyebrow">ENERGY CONTROL CENTER</p><h1>داشبورد <span class="gradient-text">مدیریت</span></h1><p class="muted">نمای کلی فروشگاه و مدیریت محتوا</p></div>
+          <span class="live-pill">● سیستم فعال</span>
+        </div>
+        <section class="stats-grid" aria-label="آمار کلی؛ برای دیدن جزئیات روی هر کارت بزن">
+          <button type="button" class="glass-stat stat-btn" data-stat="products" aria-expanded="false" aria-controls="stat-detail"><small>کل محصولات</small><strong id="stat-products">۰</strong><span>مشاهده همه محصولات</span></button>
+          <button type="button" class="glass-stat stat-btn blue-stat" data-stat="users" aria-expanded="false" aria-controls="stat-detail"><small>کاربران</small><strong id="stat-users">۰</strong><span>مشاهده همه کاربران</span></button>
+          <button type="button" class="glass-stat stat-btn purple-stat" data-stat="orders" aria-expanded="false" aria-controls="stat-detail"><small>سفارش‌ها</small><strong id="stat-orders">۰</strong><span>مشاهده همه سفارش‌ها</span></button>
+          <button type="button" class="glass-stat stat-btn" data-stat="cart" aria-expanded="false" aria-controls="stat-detail"><small>اقلام سبدها</small><strong id="stat-cart">۰</strong><span>مشاهده همه سبدها</span></button>
+        </section>
+        <section class="glass-panel stat-detail" id="stat-detail" hidden>
+          <div class="stat-detail-head"><h2 id="stat-detail-title"></h2><button type="button" class="mini-button" id="stat-detail-close">بستن</button></div>
+          <div id="stat-detail-body" class="admin-products stat-detail-body"></div>
+        </section>
+
+        <div class="admin-columns" id="product-editor">
+          <section class="glass-panel">
+            <h2 id="product-form-title">افزودن محصول</h2>
+            <form id="product-form" class="site-form">
+              <input type="hidden" id="product-id">
+              <label for="product-name">نام محصول</label><input id="product-name" required maxlength="100">
+              <label for="product-category">دسته‌بندی</label><select id="product-category" required></select>
+              <label for="product-price">قیمت</label><input id="product-price" placeholder="مثلاً ۱٬۲۵۰٬۰۰۰ تومان" required maxlength="50">
+              <label for="product-description">توضیحات</label><textarea id="product-description" rows="3" maxlength="500"></textarea>
+              <label for="product-stock">موجودی (۰ = ناموجود)</label><input id="product-stock" type="number" min="0" step="1" value="10">
+              <label for="product-discount">درصد تخفیف</label><input id="product-discount" type="number" min="0" max="90" step="1" value="0">
+              <label for="product-image">تصاویر محصول (تا ۶ تصویر)</label><input id="product-image" type="file" multiple accept="image/png,image/jpeg,image/webp">
+              <small class="field-hint">تصویر اول به‌عنوان تصویر اصلی نمایش داده می‌شود؛ تصاویر خودکار فشرده می‌شوند.</small>
+              <div id="product-image-preview" class="img-preview-list"></div>
+              <button class="button primary" type="submit">ذخیره محصول</button>
+              <button class="button ghost" id="cancel-edit" type="button">پاک کردن فرم</button>
+            </form>
+          </section>
+          <section class="glass-panel" id="categories">
+            <h2>مدیریت دسته‌بندی‌ها</h2>
+            <form id="category-form" class="site-form"><label for="category-name">نام دسته جدید</label><input id="category-name" maxlength="40" required><button class="button primary" type="submit">افزودن دسته</button></form>
+            <div id="category-admin-list" class="admin-list"></div>
+          </section>
+        </div>
+
+        <section class="glass-panel" id="site-content">
+          <h2>مدیریت محتوای صفحه اصلی</h2>
+          <p class="field-hint">هر ردیف جداگانه؛ ستون‌ها را با علامت | جدا کن.</p>
+          <div class="admin-columns">
+            <div><label for="checklist-editor">چک‌لیست بررسی محصول</label><textarea id="checklist-editor" rows="7" class="content-editor"></textarea></div>
+            <div><label for="comparison-editor">مقایسه دسته‌بندی‌ها</label><textarea id="comparison-editor" rows="7" class="content-editor"></textarea></div>
+          </div>
+          <button id="save-content" class="button primary" type="button">ذخیره محتوای صفحه اصلی</button>
+        </section>
+
+        <section class="glass-panel" id="orders-list">
+          <div class="stat-detail-head"><h2>رسیدهای آپلودی و سفارش‌ها</h2>
+            <div><label class="sr-only" for="orders-filter">فیلتر وضعیت</label><select id="orders-filter" class="search-filter-select"><option value="pending">در انتظار تایید</option><option value="confirmed">تایید شده</option><option value="rejected">رد شده</option><option value="all">همه</option></select></div></div>
+          <div id="admin-orders" class="admin-products receipts-list"></div>
+        </section>
+
+        <section class="glass-panel" id="sales-overview">
+          <h2>گزارش فروش و عملکرد محصولات</h2>
+          <div class="stats-grid">
+            <article class="glass-stat"><small>مجموع درآمد تاییدشده</small><strong id="stat-revenue">۰</strong><span>بر اساس سفارش‌های تاییدشده</span></article>
+            <article class="glass-stat blue-stat"><small>تعداد اقلام فروخته‌شده</small><strong id="stat-units">۰</strong><span>از سفارش‌های تاییدشده</span></article>
+            <article class="glass-stat purple-stat"><small>محصولات کم‌موجود</small><strong id="stat-low-stock">۰</strong><span>موجودی کمتر از ۵</span></article>
+          </div>
+          <div id="product-sales-report" class="admin-products"></div>
+        </section>
+
+        <section class="admin-columns">
+          <section class="glass-panel" id="discount-management">
+            <h2>ساخت کد تخفیف</h2>
+            <form id="coupon-form" class="site-form">
+              <label for="coupon-code">کد تخفیف</label><input id="coupon-code" required maxlength="24">
+              <label for="coupon-type">نوع تخفیف</label><select id="coupon-type"><option value="percent">درصدی</option><option value="amount">مبلغ ثابت (تومان)</option></select>
+              <label for="coupon-value">مقدار تخفیف</label><input id="coupon-value" type="number" min="1" required>
+              <label for="coupon-limit">حداکثر دفعات استفاده (۰ = نامحدود)</label><input id="coupon-limit" type="number" min="0" value="0">
+              <label for="coupon-start">شروع اعتبار</label><input id="coupon-start" type="date">
+              <label for="coupon-end">پایان اعتبار</label><input id="coupon-end" type="date">
+              <button class="button primary" type="submit">ذخیره کد تخفیف</button>
+            </form>
+            <div id="coupon-list" class="admin-list"></div>
+          </section>
+          <section class="glass-panel" id="payment-settings">
+            <h2>تنظیمات صفحه پرداخت</h2>
+            <form id="payment-settings-form" class="site-form">
+              <label for="pay-bank">نام بانک</label><input id="pay-bank" maxlength="80">
+              <label for="pay-holder">نام صاحب حساب</label><input id="pay-holder" maxlength="100">
+              <label for="pay-card">شماره کارت مقصد</label><input id="pay-card" maxlength="32" inputmode="numeric" dir="ltr">
+              <label for="pay-guide">راهنمای پرداخت</label><textarea id="pay-guide" rows="4" maxlength="1000"></textarea>
+              <button class="button primary" type="submit">ذخیره تنظیمات پرداخت</button>
+            </form>
+            <p class="field-hint">فقط شماره کارت مقصد را وارد کن؛ رمز و CVV2 هرگز نباید در سایت ثبت شود.</p>
+          </section>
+        </section>
+
+        <section class="glass-panel" id="about-admin">
+          <h2 id="about-form-title">افزودن آدرس و معرفی</h2>
+          <p class="field-hint">برای معرفی فروشگاه و باشگاه؛ در صفحه «آدرس و درباره ما» نمایش داده می‌شود.</p>
+          <form id="about-form" class="site-form">
+            <input type="hidden" id="about-id">
+            <div class="form-two"><div><label for="about-type">نوع</label><select id="about-type"><option>فروشگاه</option><option>باشگاه</option></select></div><div><label for="about-title">عنوان</label><input id="about-title" required maxlength="100"></div></div>
+            <label for="about-address">آدرس</label><input id="about-address" maxlength="300">
+            <label for="about-map">لینک نقشه (اختیاری)</label><input id="about-map" maxlength="500" dir="ltr" placeholder="https://maps.google.com/...">
+            <label for="about-description">توضیحات</label><textarea id="about-description" rows="4" maxlength="1200"></textarea>
+            <label for="about-image">تصاویر (تا ۴ تصویر)</label><input id="about-image" type="file" multiple accept="image/png,image/jpeg,image/webp">
+            <div id="about-image-preview" class="img-preview-list"></div>
+            <button class="button primary" type="submit">ذخیره</button><button class="button ghost" id="about-cancel" type="button">پاک کردن فرم</button>
+          </form>
+          <div id="about-list" class="admin-products"></div>
+        </section>
+
+        <section class="glass-panel" id="contact-admin">
+          <h2>ارتباط با ما (پایین همه صفحه‌ها)</h2>
+          <form id="contact-form" class="site-form">
+            <label for="contact-phone">شماره تماس</label><input id="contact-phone" maxlength="30" inputmode="tel" placeholder="مثلاً ۰۹۱۲۰۰۰۰۰۰۰">
+            <label for="contact-instagram">لینک اینستاگرام</label><input id="contact-instagram" maxlength="300" dir="ltr" placeholder="https://instagram.com/your_page">
+            <small class="field-hint">اگر خالی بماند، آن مورد در فوتر نمایش داده نمی‌شود.</small>
+            <button class="button primary" type="submit">ذخیره</button>
+          </form>
+        </section>
+
+        <section class="glass-panel" id="password-admin">
+          <h2>تغییر رمز مدیر</h2>
+          <form id="password-form" class="site-form" autocomplete="off">
+            <label for="pw-current">رمز فعلی</label><input id="pw-current" type="password" autocomplete="current-password" required maxlength="128">
+            <label for="pw-new">رمز جدید (حداقل ۸ کاراکتر)</label><input id="pw-new" type="password" autocomplete="new-password" required minlength="8" maxlength="128">
+            <label for="pw-confirm">تکرار رمز جدید</label><input id="pw-confirm" type="password" autocomplete="new-password" required minlength="8" maxlength="128">
+            <p class="form-note" id="pw-note" aria-live="polite"></p>
+            <button class="button primary" type="submit">ذخیره رمز جدید</button>
+          </form>
+        </section>
+
+        <section class="glass-panel" id="member-list"><h2>اعضای ثبت‌نام‌شده</h2><div id="admin-members" class="admin-products"></div></section>
+        <section class="glass-panel" id="products-list"><h2>محصولات ثبت‌شده</h2><div id="admin-products" class="admin-products"></div></section>
+        <section class="glass-panel" id="messages-list"><h2>پیام‌های پشتیبانی</h2><div id="admin-messages" class="admin-products"></div></section>
+      </div>
+    </div>
+  </main>
+  <script src="js/site-config.js" defer></script><script src="js/main.js" defer></script><script src="js/customer.js" defer></script><script src="js/admin.js" defer></script>
+</body>
+</html>

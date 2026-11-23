@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>پرداخت | ENERGY</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#050a10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2335d8ff'/%3E%3Ctext x='32' y='46' font-size='38' font-weight='900' text-anchor='middle' fill='%23031018' font-family='Arial,sans-serif'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="brand-mark">E</span>ENERGY</a>
+  <nav class="main-nav" aria-label="منوی اصلی"><a href="products.html">محصولات</a><a href="about.html">آدرس و درباره ما</a><a href="support.html">پشتیبانی</a></nav>
+  <div class="header-actions">
+    <div class="search-wrap">
+      <label class="sr-only" for="site-filter">فیلتر دسته‌بندی</label>
+      <select id="site-filter" class="search-filter-select" aria-label="فیلتر دسته‌بندی"><option value="همه">فیلتر</option></select>
+      <form class="search" role="search" onsubmit="return false">
+        <label class="sr-only" for="site-search">جستجوی محصولات</label>
+        <input id="site-search" type="search" placeholder="جستجو" autocomplete="off">
+        <button type="button" aria-label="جستجو">⌕</button>
+      </form>
+      <div class="search-results" id="search-results" hidden></div>
+    </div>
+    <a class="login-link" href="login.html" aria-label="ورود / ثبت‌نام"><svg class="login-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.6-3.5 3-5.5 7-5.5s6.4 2 7 5.5"/></svg><span>ورود / ثبت‌نام</span></a><a class="home-shortcut" href="index.html" aria-label="صفحه اصلی" title="صفحه اصلی"><svg class="home-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></svg></a><a class="cart-shortcut" href="cart.html" aria-label="سبد خرید" title="سبد خرید">🛒</a>
+    <button class="menu-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+  </div>
+</header>
+<main class="container dashboard-page"><section class="glass-panel payment-panel"><p class="eyebrow">CHECKOUT</p><h1>پرداخت سفارش</h1><p class="muted">مبلغ نهایی را کارت‌به‌کارت واریز کن، سپس تصویر رسید را بارگذاری کن تا سفارشت ثبت شود.</p>
+<div class="payment-layout"><div class="payment-summary"><span>مبلغ قابل پرداخت</span><strong id="payment-total">—</strong><div id="payment-lines" class="admin-list"></div><div class="bank-card" id="bank-info"></div><button type="button" class="mini-button" id="copy-card" hidden>کپی شماره کارت</button><p class="muted" id="pay-guide"></p><p id="delivery-summary"></p></div>
+<div class="payment-visual"><div class="payment-icon">E</div><h2>بارگذاری رسید واریز</h2><p>تصویر رسید کارت‌به‌کارت را اینجا بارگذاری کن.</p><input id="receipt-input" class="sr-only receipt-input" type="file" accept="image/png,image/jpeg,image/webp"><label class="receipt-pick" for="receipt-input">انتخاب تصویر رسید</label><img id="receipt-preview" class="receipt-preview" alt="پیش‌نمایش رسید" hidden><p class="form-note" id="pay-note" aria-live="polite"></p><button id="submit-order" class="button primary" type="button">ثبت سفارش و ارسال رسید</button><small class="field-hint">پس از بررسی و تایید واریز توسط مدیر، فیش خرید در پنل کاربری‌ات قرار می‌گیرد.</small></div></div></section></main>
+<footer class="site-footer">
+  <div class="footer-grid container">
+    <div><a class="brand" href="index.html"><span class="brand-mark">E</span>ENERGY</a><p>انرژی؛ فروشگاهی برای بررسی و انتخاب مکمل‌ها و تجهیزات ورزشی با اطلاعات شفاف و تجربه‌ای ساده.</p></div>
+    <div><h3>دسترسی سریع</h3><a href="products.html">محصولات</a><a href="about.html">آدرس و درباره ما</a><a href="support.html">پشتیبانی</a><a href="login.html">ورود / ثبت‌نام</a></div>
+    <div><h3>ارتباط با ما</h3><a data-site-phone href="#" hidden>☎ شماره تماس: <span></span></a><a data-site-instagram href="#" target="_blank" rel="noopener noreferrer" hidden><svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> صفحه اینستاگرام</a><a href="support.html#comments">ثبت نظر و پیشنهاد</a></div>
+    <div class="trust"><h3>نشانه‌های اعتماد</h3><div class="trust-placeholder">محل درج نمادهای معتبر پس از دریافت مجوز</div></div>
+  </div>
+  <div class="copyright">© تمامی حقوق این وب‌سایت برای برند انرژی محفوظ است.</div>
+</footer>
+<script src="js/site-config.js" defer></script><script src="js/main.js" defer></script><script src="js/customer.js" defer></script><script src="js/payment.js" defer></script>
+</body>
+</html>

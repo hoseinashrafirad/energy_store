@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ثبت‌نام | انرژی</title>
+<meta name="description" content="ساخت حساب کاربری در فروشگاه انرژی.">
+<meta name="theme-color" content="#050a10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2335d8ff'/%3E%3Ctext x='32' y='46' font-size='38' font-weight='900' text-anchor='middle' fill='%23031018' font-family='Arial,sans-serif'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="brand-mark">E</span>ENERGY</a>
+  <nav class="main-nav" aria-label="منوی اصلی"><a href="products.html">محصولات</a><a href="about.html">آدرس و درباره ما</a><a href="support.html">پشتیبانی</a></nav>
+  <div class="header-actions">
+    <div class="search-wrap">
+      <label class="sr-only" for="site-filter">فیلتر دسته‌بندی</label>
+      <select id="site-filter" class="search-filter-select" aria-label="فیلتر دسته‌بندی"><option value="همه">فیلتر</option></select>
+      <form class="search" role="search" onsubmit="return false">
+        <label class="sr-only" for="site-search">جستجوی محصولات</label>
+        <input id="site-search" type="search" placeholder="جستجو" autocomplete="off">
+        <button type="button" aria-label="جستجو">⌕</button>
+      </form>
+      <div class="search-results" id="search-results" hidden></div>
+    </div>
+    <a class="login-link" href="login.html" aria-label="ورود / ثبت‌نام"><svg class="login-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.6-3.5 3-5.5 7-5.5s6.4 2 7 5.5"/></svg><span>ورود / ثبت‌نام</span></a><a class="home-shortcut" href="index.html" aria-label="صفحه اصلی" title="صفحه اصلی"><svg class="home-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></svg></a><a class="cart-shortcut" href="cart.html" aria-label="سبد خرید" title="سبد خرید">🛒</a>
+    <button class="menu-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+  </div>
+</header>
+<main class="container auth-wrap"><section class="glass-panel auth-card"><p class="eyebrow">JOIN ENERGY</p><h1>ساخت حساب <span class="gradient-text">کاربری</span></h1><form class="site-form" id="register-form">
+<label for="full-name">نام و نام خانوادگی</label><input id="full-name" name="name" autocomplete="name" required maxlength="100" placeholder="نام کامل خود را وارد کنید">
+<label for="username">نام کاربری</label><input id="username" name="username" autocomplete="username" required minlength="3" maxlength="40" placeholder="مثلاً hos_ein"><small class="field-hint">حداقل ۳ کاراکتر؛ این نام هنگام خوشامدگویی نمایش داده می‌شود.</small>
+<label for="email">ایمیل (اختیاری)</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com"><small class="field-hint">وارد کردن ایمیل اجباری نیست.</small>
+<label for="phone">شماره تماس</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="20" placeholder="مثلاً ۰۹۱۲۰۰۰۰۰۰۰"><small class="field-hint">برای هماهنگی سفارش از این شماره استفاده می‌شود.</small>
+<label for="password">رمز عبور</label><div class="password-field"><input id="password" name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="128" placeholder="حداقل ۸ کاراکتر"><button class="password-toggle" type="button" id="toggle-password" aria-label="نمایش رمز عبور" aria-pressed="false"><svg class="eye-icon eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+<svg class="eye-icon eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 3 18 18M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.1 3.8M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7c1.2 0 2.3-.2 3.3-.6"/></svg></button></div><small class="field-hint">برای امنیت بیشتر از رمز منحصربه‌فرد استفاده کن.</small><p class="form-note" aria-live="polite"></p><button class="button primary" type="submit">ثبت‌نام</button></form><div class="auth-switch">قبلاً ثبت‌نام کردی؟ <a href="login.html">وارد شو</a></div></section></main>
+<footer class="site-footer">
+  <div class="footer-grid container">
+    <div><a class="brand" href="index.html"><span class="brand-mark">E</span>ENERGY</a><p>انرژی؛ فروشگاهی برای بررسی و انتخاب مکمل‌ها و تجهیزات ورزشی با اطلاعات شفاف و تجربه‌ای ساده.</p></div>
+    <div><h3>دسترسی سریع</h3><a href="products.html">محصولات</a><a href="about.html">آدرس و درباره ما</a><a href="support.html">پشتیبانی</a><a href="login.html">ورود / ثبت‌نام</a></div>
+    <div><h3>ارتباط با ما</h3><a data-site-phone href="#" hidden>☎ شماره تماس: <span></span></a><a data-site-instagram href="#" target="_blank" rel="noopener noreferrer" hidden><svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> صفحه اینستاگرام</a><a href="support.html#comments">ثبت نظر و پیشنهاد</a></div>
+    <div class="trust"><h3>نشانه‌های اعتماد</h3><div class="trust-placeholder">محل درج نمادهای معتبر پس از دریافت مجوز</div></div>
+  </div>
+  <div class="copyright">© تمامی حقوق این وب‌سایت برای برند انرژی محفوظ است.</div>
+</footer>
+<script src="js/site-config.js" defer></script><script src="js/main.js" defer></script><script src="js/customer.js" defer></script><script src="js/store.js" defer></script><script src="js/register.js" defer></script>
+</body>
+</html>
